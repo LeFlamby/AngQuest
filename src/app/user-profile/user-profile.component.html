@@ -1,0 +1,19 @@
+<div id="profile">
+  <img src="{{ user.photo }}" alt="profilePic" />
+  <p>Prénom:{{ user.firstName }}</p>
+  <p>Nom: {{ user.name }}</p>
+  <p>Citation :{{ user.quote }}</p>
+  <label for="quote"></label>
+
+  <input
+    type="text"
+    id="quote"
+    name="quote"
+    
+    placeholder="Two beer or not to beer"
+    [(ngModel)]="user.quote"
+  />
+  <p *ngIf="user.isAgeHidden" > Age: {{user.age}}</p>
+  <label for="old"></label>
+  <button (click)="isAgeHidden()"  id="old" name="old">Afficher/Masquer l'age</button> 
+</div>
